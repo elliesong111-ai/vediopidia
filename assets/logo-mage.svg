@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" aria-label="MAGE Logo">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f4e4a6"/>
+      <stop offset="50%" style="stop-color:#d4af37"/>
+      <stop offset="100%" style="stop-color:#9a7b2a"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <!-- Left wing -->
+  <path d="M8 40 Q0 20 12 8 Q20 16 24 28 Q18 24 8 40Z" fill="url(#gold)" opacity="0.9" class="wing-left"/>
+  <!-- Crown -->
+  <path d="M42 32 L52 18 L62 32 L72 18 L82 32 L72 42 L52 42 Z" fill="url(#gold)" filter="url(#glow)"/>
+  <circle cx="62" cy="22" r="3" fill="#1a0a0a"/>
+  <!-- MAGE text -->
+  <text x="92" y="38" font-family="Georgia, serif" font-size="36" font-weight="bold" fill="url(#gold)" letter-spacing="2">MAGE</text>
+  <!-- Right wing -->
+  <path d="M272 40 Q280 20 268 8 Q260 16 256 28 Q262 24 272 40Z" fill="url(#gold)" opacity="0.9" class="wing-right"/>
+</svg>
