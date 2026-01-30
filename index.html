@@ -18,8 +18,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=2">
-  <!-- Critical inline CSS so page always has dark theme even if style.css fails to load -->
+  <link rel="stylesheet" href="style.css?v=3">
+  <!-- Critical inline CSS: dark theme + TAP TO BEGIN visible even if style.css fails -->
   <style>
     body{background:#000!important;color:#fff!important;margin:0;font-family:Outfit,system-ui,sans-serif;}
     a{color:#fff!important;text-decoration:none;}
@@ -28,6 +28,11 @@
     .cta:hover,.btn-add:hover{transform:translateY(-2px);}
     .cta-primary{background:#fff;color:#000;}
     .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 24px;position:relative;overflow:hidden;background:#000;}
+    .hero-tap-overlay{position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse 80% 80% at 50% 50%,#0a0a0a 0%,#000 70%);cursor:pointer;}
+    .hero-tap-text{font-size:clamp(1.5rem,5vw,3rem);font-weight:700;color:#fff;letter-spacing:.15em;}
+    .hero-magic,.hero-content{opacity:0;}
+    .hero-started .hero-tap-overlay{opacity:0;visibility:hidden;pointer-events:none;}
+    .hero-started .hero-magic,.hero-started .hero-content{opacity:1;}
     .hero-tagline{color:#fff;margin:0 0 4px;}
     .nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:rgba(0,0,0,.95);border-bottom:1px solid rgba(255,255,255,.15);}
   </style>
@@ -407,6 +412,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
