@@ -43,7 +43,7 @@
   <!-- Navigation -->
   <nav class="nav" role="navigation">
     <a href="#hero" class="nav-logo" aria-label="MAGE Home">
-      <img src="assets/logo-mage.svg" alt="MAGE" class="logo-svg" width="44" height="44">
+      <img src="assets/logo-mage.png" alt="MAGE" class="logo-svg" width="44" height="44" onerror="this.src='assets/logo-mage.svg'">
     </a>
     <ul class="nav-links">
       <li><a href="#hero">Home</a></li>
@@ -57,6 +57,7 @@
   <!-- Hero Section: Magic opening -->
   <header id="hero" class="hero">
     <div class="hero-bg">
+      <div class="hero-vignette" aria-hidden="true"></div>
       <div class="hero-curtain" aria-hidden="true"></div>
       <div class="floating-cards" aria-hidden="true">
         <span class="card-float c1">♠</span>
@@ -71,7 +72,7 @@
     </div>
     <div class="hero-magic">
       <div class="hero-logo-wrap">
-        <img src="assets/logo-mage.svg" alt="MAGE" class="hero-logo" width="200" height="200">
+        <img src="assets/logo-mage.png" alt="MAGE" class="hero-logo" width="200" height="200" onerror="this.src='assets/logo-mage.svg'">
       </div>
     </div>
     <div class="hero-content">
@@ -262,7 +263,7 @@
         <div class="story-social">
           <h3>MAGE Community</h3>
           <div class="social-embed profile-card">
-            <img src="assets/logo-mage.svg" alt="MAGE" class="profile-logo" width="80" height="80">
+            <img src="assets/logo-mage.png" alt="MAGE" class="profile-logo" width="80" height="80" onerror="this.src='assets/logo-mage.svg'">
             <div class="profile-info">
               <strong class="profile-name">MAGE</strong>
               <p class="profile-stats">1 post · 83 followers · 106 following</p>
@@ -331,7 +332,7 @@
                 <label class="payment-option"><input type="radio" name="payment" value="card"> <span class="pay-icon">Credit Card</span></label>
               </div>
             </fieldset>
-            <button type="submit" class="cta cta-submit">Place Order</button>
+            <button type="submit" class="cta cta-submit" id="placeOrderBtn">Place Order</button>
           </form>
         </div>
         <aside class="checkout-summary">
@@ -349,7 +350,7 @@
 
   <footer class="footer">
     <div class="container">
-      <img src="assets/logo-mage.svg" alt="MAGE" class="footer-logo" width="56" height="56">
+      <img src="assets/logo-mage.png" alt="MAGE" class="footer-logo" width="56" height="56" onerror="this.src='assets/logo-mage.svg'">
       <p>Shuffle. Roll. Deal. Anywhere in Babson <span class="suit">♠</span></p>
       <p class="copyright">© 2025 MAGE</p>
       <div class="social">
@@ -358,6 +359,22 @@
       </div>
     </div>
   </footer>
+
+  <!-- Payment notice modal (after Place Order) -->
+  <div id="paymentModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="paymentModalTitle" aria-hidden="true">
+    <div class="modal-content modal-shop">
+      <button class="close payment-close" aria-label="Close">&times;</button>
+      <h2 id="paymentModalTitle">Payment</h2>
+      <p class="payment-notice">Online payment is not connected yet. Your order has been saved.</p>
+      <p class="payment-options">To complete your order now:</p>
+      <ul class="payment-list">
+        <li><a href="mailto:mage@example.com?subject=MAGE%20Order">Email us</a> with your cart and shipping details</li>
+        <li>DM <strong>@MAGE</strong> on Instagram</li>
+      </ul>
+      <p class="payment-soon">We’ll add WeChat Pay, Alipay, and card payments soon.</p>
+      <button type="button" class="cta primary" id="paymentModalOk">OK</button>
+    </div>
+  </div>
 
   <!-- Add to Cart Modal (quick add) -->
   <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">

@@ -200,8 +200,22 @@ document.addEventListener('DOMContentLoaded', () => {
         showToast('Your cart is empty. Add items from Shop.');
         return;
       }
-      showToast('Order received! (Demo — connect your payment backend.)');
+      const paymentModal = document.getElementById('paymentModal');
+      if (paymentModal) {
+        paymentModal.style.display = 'flex';
+        paymentModal.setAttribute('aria-hidden', 'false');
+      } else {
+        showToast('Order received! Payment coming soon — contact us to complete.');
+      }
       track('checkout_submit');
     });
+  }
+  const paymentModal = document.getElementById('paymentModal');
+  const paymentClose = document.querySelector('.payment-close');
+  const paymentOk = document.getElementById('paymentModalOk');
+  if (paymentModal) {
+    if (paymentClose) paymentClose.addEventListener('click', () => { paymentModal.style.display = 'none'; paymentModal.setAttribute('aria-hidden', 'true'); });
+    if (paymentOk) paymentOk.addEventListener('click', () => { paymentModal.style.display = 'none'; paymentModal.setAttribute('aria-hidden', 'true'); });
+    paymentModal.addEventListener('click', (e) => { if (e.target === paymentModal) { paymentModal.style.display = 'none'; paymentModal.setAttribute('aria-hidden', 'true'); } });
   }
 });
